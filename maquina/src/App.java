@@ -11,17 +11,54 @@ public class App {
         System.out.println("Tinto -> $7.500 pesos.");
         System.out.println("Se aceptan Monedas de: $500, $1000 pesos.");
         System.out.println("Billetes de: $2000, $5000, $10.000 pesos." + "\nIngrese 'x' para no ingresar mas dinero\nIngrese 'y' para obtener tinto");
+        
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("¿Cuantas monedas va a ingresar?: ");
-            int n = scanner.nextInt();
+            int m = scanner.nextInt();
+            
+            for(int i=0; i<m; i++){
+        
+                while(true){
 
-            for(int i=0; i<n; i++){
-                System.out.print("Moneda: ");
-                //int moneda = scanner.nextInt();
-                dinero.add(scanner.nextInt());
+                    System.out.print("Moneda: ");
+                    int moneda = scanner.nextInt();
+
+                    if(moneda == 500 || moneda == 1000){
+                        dinero.add(moneda);
+                        break;
+
+                    }else{
+                        System.out.println("Moneda no aceptada");
+                    }   
+                }   
             }
-        }
-        System.out.println(dinero.toString());
-        //maquina.IngresoDinero(dinero);
-    }
+            
+            System.out.print("¿Cuantos billetes va a ingresar?: ");
+            int b = scanner.nextInt();
+
+            for(int i=0; i<b; i++){
+
+                while (true) {
+                    
+                    System.out.print("Billete: ");
+                    int billete = scanner.nextInt();
+
+                    if(billete == 2000 || billete == 5000 || billete == 10000){
+                        dinero.add(billete);
+                        break;
+
+                    }else{
+                        System.out.println("Billete no aceptado");
+                    }
+                }
+            }
+
+            System.out.println(dinero.toString());
+            
+       
+    
+    } maquina.IngresoDinero(dinero);
+    
+}
+
 }
