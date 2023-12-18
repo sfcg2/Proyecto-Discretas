@@ -3,12 +3,12 @@ import java.util.ArrayList;
 
 public class Maquina {
 
-
-    public void IngresoDinero(ArrayList<Integer> listaDinero){
-
+    public void Automata(ArrayList<Integer> listaDinero){
+        App app = new App();
+        int credito = 0;
         ArrayList<Integer> dinero = listaDinero;
         Estado estadoInicial = Estado.Estado_x;
-        int credito = 0;
+        
         
 
         for(Integer d : dinero){
@@ -24,8 +24,8 @@ public class Maquina {
                         case 5000:estadoInicial = Estado.Estado_5000; credito += 5000; break;
                         case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                         default:
-                            estadoInicial = Estado.Estado_10000; //credito = 0; 
-                            return;
+                            estadoInicial = Estado.Estado_Error; 
+                            break;
                     }break;
 
                 case Estado_500:
@@ -37,8 +37,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_5500; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break; //+
                             default:
-                                estadoInicial = Estado.Estado_500; //credito = 500; 
-                                return;
+                                estadoInicial = Estado.Estado_Error;  
+                                break;
                     }break;
 
                 case Estado_1000:
@@ -50,8 +50,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_6000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_1000; //credito = 1000; 
-                                return;
+                                estadoInicial = Estado.Estado_Error;  
+                                break;
                     }break;
                 case Estado_1500:
                     System.out.println("4");
@@ -62,8 +62,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_6500; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_1500; //credito = 1500;
-                                 return;
+                                estadoInicial = Estado.Estado_Error; 
+                                break;
                     }break;
                 case Estado_2000:
                     System.out.println("5");
@@ -74,8 +74,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_7000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_2000; //credito = 2000; 
-                                return;
+                                estadoInicial = Estado.Estado_Error; 
+                                break;
                     }break;
                 case Estado_2500:
                     System.out.println("6");
@@ -86,9 +86,9 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_7500; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_2500; //credito = 2500; 
-                                return;
-                    }System.out.println(credito);break;
+                                estadoInicial = Estado.Estado_Error;  
+                                break;
+                    }break;
                 case Estado_3000:
                     System.out.println("7");
                     switch (d) {
@@ -110,8 +110,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_3500; //credito = 3500; 
-                                return;
+                                estadoInicial = Estado.Estado_Error; 
+                                break;
                     }break;
                 case Estado_4000:
                     System.out.println("9");
@@ -122,8 +122,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_4000; //credito = 4000; 
-                                return;
+                                estadoInicial = Estado.Estado_Error;  
+                                break;
                     }break;
                 
                 case Estado_4500:
@@ -138,8 +138,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito = 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito = 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_4500; //credito = 4500; 
-                                return;
+                                estadoInicial = Estado.Estado_Error; 
+                                break;
                     }
                     break;
                 case Estado_5000:
@@ -151,7 +151,7 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_5000; //credito = 4000; 
+                                estadoInicial = Estado.Estado_Error; 
                                 return;
                     }break;
                 case Estado_5500:
@@ -163,7 +163,7 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_5500; //credito = 4000; 
+                                estadoInicial = Estado.Estado_Error;  
                                 break;
                     }break;
                 case Estado_6000:
@@ -175,8 +175,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_6000; //credito = 4000; 
-                                return;
+                                estadoInicial = Estado.Estado_Error; 
+                                break;
                     }break;
                 case Estado_6500:
                     System.out.println("14");
@@ -187,8 +187,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_6500; //credito = 4000; 
-                                return;
+                                estadoInicial = Estado.Estado_Error; 
+                                break;
                     }break;
                 case Estado_7000:
                     System.out.println("15");
@@ -199,8 +199,8 @@ public class Maquina {
                             case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
-                                estadoInicial = Estado.Estado_7000; //credito = 4000; 
-                                return;
+                                estadoInicial = Estado.Estado_Error; 
+                                break;
                     }break;
                 case Estado_7500:
                     System.out.println("16");
@@ -215,8 +215,7 @@ public class Maquina {
                                 System.out.println("16"+ credito);  
                                 break;
                     }
-                    break;
-                    
+                    break;   
                 case Estado_10000:
                     System.out.println("17");
                     switch (d) {
@@ -227,18 +226,20 @@ public class Maquina {
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
                                 estadoInicial = Estado.Estado_y;
-                                System.out.println("17 "+ credito);  //credito = 4000; 
+                                System.out.println("17 "+ credito);   
                                 break;
                     }break;
                 case Estado_y:
-                    
                     System.out.println("Tinto comprado -> $7500");
                     System.out.println("Devuelta -> $" + (credito-7500) + " pesos");
                     System.out.println("Gracias por su compra!!");
                     break;
 
                 case Estado_Error:
-                    System.out.println("ERROR -> Dinero Insuficiente, Ingrese mas");
+                    System.out.println("ERROR -> Dinero Insuficiente, Ingrese el faltante.\n");
+                    System.out.println("credito " + credito);
+                    
+                    app.IngresoDinero();
                     break;
                 default:
                     System.out.println("no entro a ninguno");
