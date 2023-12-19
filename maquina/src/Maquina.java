@@ -9,8 +9,6 @@ public class Maquina {
         ArrayList<Integer> dinero = listaDinero;
         Estado estadoInicial = Estado.Estado_x;
         
-        
-
         for(Integer d : dinero){
             
             switch (estadoInicial) {
@@ -203,10 +201,10 @@ public class Maquina {
                 case Estado_7500:
                     //System.out.println("16");
                     switch (d) {
-                            case 500:estadoInicial = Estado.Estado_500; credito += 500; break;
-                            case 1000:estadoInicial = Estado.Estado_1000; credito += 1000; break;
-                            case 2000:estadoInicial = Estado.Estado_2000; credito += 2000; break;
-                            case 5000:estadoInicial = Estado.Estado_5000; credito += 5000; break;
+                            case 500:estadoInicial = Estado.Estado_1000; credito += 500; break;
+                            case 1000:estadoInicial = Estado.Estado_10000; credito += 1000; break;
+                            case 2000:estadoInicial = Estado.Estado_10000; credito += 2000; break;
+                            case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
                                 estadoInicial = Estado.Estado_y;
@@ -217,10 +215,10 @@ public class Maquina {
                 case Estado_10000:
                     //System.out.println("17");
                     switch (d) {
-                            case 500:estadoInicial = Estado.Estado_500; credito += 500; break;
-                            case 1000:estadoInicial = Estado.Estado_1000; credito += 1000; break;
-                            case 2000:estadoInicial = Estado.Estado_2000; credito += 2000; break;
-                            case 5000:estadoInicial = Estado.Estado_5000; credito += 5000; break;
+                            case 500:estadoInicial = Estado.Estado_10000; credito += 500; break;
+                            case 1000:estadoInicial = Estado.Estado_10000; credito += 1000; break;
+                            case 2000:estadoInicial = Estado.Estado_10000; credito += 2000; break;
+                            case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
                                 estadoInicial = Estado.Estado_y;
