@@ -20,17 +20,16 @@ public class App {
     public void IngresoDinero(){
 
         System.out.println(menu.toString());
-        ArrayList<Integer> dinero1 = dinero;
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("\nINGRESE MONEDAS");
+            System.out.println("\nINGRESE EL DINERO");
             
                 while(valor == true){
 
-                    System.out.print("Moneda: ");
+                    System.out.print("$: ");
                     int moneda = scanner.nextInt(); 
 
-                    if(moneda == 500 || moneda == 1000){
-                        dinero1.add(moneda);
+                    if(moneda == 500 || moneda == 1000 || moneda == 2000 || moneda == 5000 || moneda == 10000){
+                        dinero.add(moneda);
 
                     }else if(moneda == 0){
                         valor = false;
@@ -40,28 +39,12 @@ public class App {
                         System.out.println("Moneda no aceptada");
                     }   
                 }   
-            
-            System.out.println("\nINGRESE BILLETES");
-
-                while (true) {
-                    
-                    System.out.print("Billete: ");
-                    int billete = scanner.nextInt();
-
-                    if(billete == 2000 || billete == 5000 || billete == 10000){
-                        dinero1.add(billete);
-
-                    }else if(billete == 0){
-                        valor = false;
-                        break;
-                    }
-                    else{System.out.println("Billete no aceptado");}
-            }
             dinero.add(0);
             dinero.add(0);
             
-            System.out.println(dinero.toString());
-
+            //System.out.println(dinero.toString());
+            limpiarPantalla();
+            esperarSegundos(300);
             System.out.print("Presione '1' para comprar el tinto o '2' para salir: ");
             int num = scanner.nextInt();
             
@@ -75,6 +58,22 @@ public class App {
             }
             }
 
+        }
+        
+        public static void limpiarPantalla() {
+            try{ new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        
+            }catch (Exception e){
+    
+                e.printStackTrace();
+            }
+        }
+        public static void esperarSegundos(int sg) {
+            try {
+                Thread.sleep(sg); // Convierte segundos a milisegundos
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 }
 
