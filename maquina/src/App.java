@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class App {
 
     boolean valor = true;
-    ArrayList<Integer> dinero = new ArrayList<Integer>();
+    static ArrayList<Integer> dinero = new ArrayList<Integer>();
     Maquina maquina = new Maquina();
     static StringBuilder menu = new StringBuilder();
 
@@ -36,11 +36,9 @@ public class App {
                         break;
                     }
                     else{
-                        System.out.println("Moneda no aceptada");
+                        System.out.println("dinero no aceptado");
                     }   
                 }   
-            dinero.add(0);
-            dinero.add(0);
             
             //System.out.println(dinero.toString());
             limpiarPantalla();
@@ -57,7 +55,6 @@ public class App {
                 return;
             }
             }
-
         }
         
         public static void limpiarPantalla() {

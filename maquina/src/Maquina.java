@@ -7,9 +7,12 @@ public class Maquina {
         App app = new App();
         int credito = 0;
         ArrayList<Integer> dinero = listaDinero;
+        dinero.add(0);
+        dinero.add(0);
+        ArrayList<Integer> copia = new ArrayList<>(dinero);
         Estado estadoInicial = Estado.Estado_x;
         
-        for(Integer d : dinero){
+        for(Integer d : copia){
             
             switch (estadoInicial) {
                 
@@ -128,11 +131,11 @@ public class Maquina {
 
                     //System.out.println("10");
                     switch (d) {
-                            case 500:estadoInicial = Estado.Estado_5000; credito = 500; break;
-                            case 1000:estadoInicial = Estado.Estado_5500; credito = 1000; break;
-                            case 2000:estadoInicial = Estado.Estado_6500; credito = 2000; break;
-                            case 5000:estadoInicial = Estado.Estado_10000; credito = 5000; break;
-                            case 10000:estadoInicial = Estado.Estado_10000; credito = 10000; break;
+                            case 500:estadoInicial = Estado.Estado_5000; credito += 500; break;
+                            case 1000:estadoInicial = Estado.Estado_5500; credito += 1000; break;
+                            case 2000:estadoInicial = Estado.Estado_6500; credito += 2000; break;
+                            case 5000:estadoInicial = Estado.Estado_10000; credito += 5000; break;
+                            case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
                                 estadoInicial = Estado.Estado_Error; 
                                 break;
@@ -148,7 +151,7 @@ public class Maquina {
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
                                 estadoInicial = Estado.Estado_Error; 
-                                return;
+                                break;
                     }break;
                 case Estado_5500:
                     //System.out.println("12");
@@ -208,7 +211,7 @@ public class Maquina {
                             case 10000:estadoInicial = Estado.Estado_10000; credito += 10000; break;
                             default:
                                 estadoInicial = Estado.Estado_y;
-                                //System.out.println("16"+ credito);  
+                                System.out.println("16"+ credito);  
                                 break;
                     }
                     break;   
@@ -236,9 +239,14 @@ public class Maquina {
                 case Estado_Error:
 
                     System.out.println("\nERROR -> Dinero Insuficiente, Ingrese el faltante.\n");
-                    //System.out.println("Dinero Ingresado" + credito);
-                    app.esperarSegundos(2100);
+                    System.out.println("Ingresado -> $" + credito);
+
+                    dinero.remove(dinero.lastIndexOf(0));
+                    dinero.remove(dinero.lastIndexOf(0));
+
+                    app.esperarSegundos(3000);
                     app.limpiarPantalla();
+
                     app.IngresoDinero();
                     break;
 
